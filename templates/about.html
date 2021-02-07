@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title%}
+COVID19 Statistics
+{% endblock title%}
+
+{% block body%}
+
+
+
+<div>
+    <h1>COVID-19 Statistics</h1>
+    <table>
+        {%for i in range(0,statisticsArr | count)%}
+        <tr>
+        {%if i == 0%}
+            <th>{{statisticsArr[i][0] |safe}}</th>
+            <th>{{statisticsArr[i][1] |safe}}</th>
+            <th>{{statisticsArr[i][2] |safe}}</th>
+            <th>{{statisticsArr[i][3] |safe}}</th>
+            <th>{{statisticsArr[i][4] |safe}}</th>
+
+        {% else %}
+            <td>{{statisticsArr[i][0] |safe}}</td>
+            <td>{{statisticsArr[i][1] |safe}}</td>
+            <td>{{statisticsArr[i][2] |safe}}</td>
+            <td>{{statisticsArr[i][3] |safe}}</td>
+            <td>{{statisticsArr[i][4] |safe}}</td>
+
+        {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+    <p>
+    </p>
+</div>
+{% endblock body%}
